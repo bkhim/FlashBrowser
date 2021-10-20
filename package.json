@@ -1,0 +1,54 @@
+{
+  "name": "flash-browser",
+  "productName": "Flash Browser",
+  "version": "0.0.3",
+  "description": "A small browser capable of displaying pages with embedded flash content.",
+  "main": "main.js",
+  "author": {
+    "name": "as3"
+  },
+  "directories": {
+    "flashver": "flashver"
+  },
+  "build": {
+    "appId": "pm.flash.browser"
+	},
+	
+   "publish": [
+    {
+      "provider": "github",
+      "private": false,
+      "owner": "radubirsan",
+      "repo": "flashbrowser",
+      "token": ""
+    }
+  ],
+	
+
+  "scripts": {
+    "test": "echo \"Error: no test specifieddd\" && exit 1",
+    "make-mac": "npx @electron-forge/cli make --platform darwin",
+	"make": "npx @electron-forge/cli make",
+    "start": "electron . --enable-logging --overwrite",
+    "build": "electron-packager . FlashBrowser --platform=win32 --overwrite --icon=icon.ico",
+	"build-linux": "electron-packager . FlashBrowser --platform=linux --overwrite --icon=g.png",
+    "pack": "build --dir",
+    "dist": "electron-builder"
+  },
+
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "electron": "^11.5.0",
+    "electron-builder": "^22.11.7",
+    "electron-packager": "^15.2.0",
+    "electron-prompt": "^1.6.2"
+	 
+  },
+  "repository": {
+	  "type" : "git",
+	  "url" : "https://github.com/radubirsan/FlashBrowser.git"
+  },
+    "dependencies": {
+    "electron-prompt": "^1.6.2"
+  }
+}
